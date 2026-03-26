@@ -1,0 +1,14 @@
+{
+	"name": "@repo/shared-config",
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"dependencies": {
+		"@repo/shared-db": "workspace:*"
+	},
+	"scripts": {
+		"typecheck": "tsc --noEmit"
+	}
+}

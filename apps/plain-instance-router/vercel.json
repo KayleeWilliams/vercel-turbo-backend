@@ -1,0 +1,10 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"buildCommand": "pnpm run build",
+	"outputDirectory": ".",
+	"functions": {
+		"api/index.ts": {
+			"includeFiles": "../../packages/shared-config/**,../../packages/shared-db/**"
+		}
+	}
+}
