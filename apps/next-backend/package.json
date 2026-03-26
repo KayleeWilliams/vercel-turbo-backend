@@ -1,5 +1,5 @@
 {
-	"name": "@repo/next-instance-router",
+	"name": "@repo/next-backend",
 	"private": true,
 	"type": "module",
 	"scripts": {

@@ -6,8 +6,7 @@
 	"scripts": {
 		"build": "turbo run build",
 		"typecheck": "turbo run typecheck",
-		"dev:plain": "pnpm --filter @repo/plain-instance-router dev",
-		"dev:next": "pnpm --filter @repo/next-instance-router dev"
+		"dev:next": "pnpm --filter @repo/next-backend dev"
 	},
 	"devDependencies": {
 		"@types/node": "^24.5.2",

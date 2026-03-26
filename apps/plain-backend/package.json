@@ -1,12 +1,11 @@
 {
-	"name": "@repo/plain-instance-router",
+	"name": "@repo/plain-backend",
 	"private": true,
 	"type": "module",
 	"dependencies": {
 		"@repo/shared-config": "workspace:*"
 	},
 	"scripts": {
-		"build": "tsc --noEmit",
 		"typecheck": "tsc --noEmit",
 		"dev": "vercel dev"
 	}

@@ -21,7 +21,7 @@ importers:
         specifier: ^50.17.1
         version: 50.37.1(typescript@5.9.3)
 
-  apps/next-instance-router:
+  apps/next-backend:
     dependencies:
       '@repo/shared-config':
         specifier: workspace:*
@@ -43,7 +43,7 @@ importers:
         specifier: ^19.2.2
         version: 19.2.3(@types/react@19.2.14)
 
-  apps/plain-instance-router:
+  apps/plain-backend:
     dependencies:
       '@repo/shared-config':
         specifier: workspace:*

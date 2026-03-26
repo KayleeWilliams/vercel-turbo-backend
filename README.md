@@ -6,8 +6,8 @@ Minimal A/B repro for Vercel runtime packaging with source-first workspace packa
 
 This repo compares two backend shapes that import the same source-first workspace packages:
 
-- `apps/plain-instance-router`: plain Vercel app mirroring the current `consent-instance` packaging model
-- `apps/next-instance-router`: Next.js backend app using Route Handlers and `transpilePackages`
+- `apps/plain-backend`: plain Vercel app mirroring the current `consent-instance` packaging model
+- `apps/next-backend`: Next.js backend app using Route Handlers and `transpilePackages`
 
 Both apps import:
 
@@ -20,8 +20,8 @@ Both shared packages intentionally export raw TypeScript source:
 
 ## Workspace Layout
 
-- `apps/plain-instance-router`
-- `apps/next-instance-router`
+- `apps/plain-backend`
+- `apps/next-backend`
 - `packages/shared-db`
 - `packages/shared-config`
 
@@ -30,8 +30,8 @@ Both shared packages intentionally export raw TypeScript source:
 ```bash
 pnpm install
 pnpm typecheck
-pnpm dev:plain
 pnpm dev:next
+pnpm --filter @repo/plain-backend dev
 ```
 
 Package-specific checks:
@@ -77,24 +77,24 @@ Create two separate Vercel projects from this same repo.
 
 ### Plain app
 
-- Root directory: `apps/plain-instance-router`
+- Root directory: `apps/plain-backend`
 - Expected live endpoint: `/api`
 
 ### Next app
 
-- Root directory: `apps/next-instance-router`
+- Root directory: `apps/next-backend`
 - Expected live endpoint: `/api/config`
 
 ## What To Record
 
-For `plain-instance-router`:
+For `plain-backend`:
 
 - deploy success or failure
 - runtime invocation success or failure
 - exact error text if it fails
 - whether the error references `src/index.ts` under `node_modules`
 
-For `next-instance-router`:
+For `next-backend`:
 
 - deploy success or failure
 - route invocation success or failure
@@ -104,8 +104,8 @@ For `next-instance-router`:
 
 | App | Framework | Package contract | Deploy model | Live result | Notes |
 | --- | --- | --- | --- | --- | --- |
-| plain-instance-router | Plain Vercel function | Source-first `src/*.ts` exports | `includeFiles` ships workspace packages | Pending | Control app mirroring current `consent-instance` style |
-| next-instance-router | Next.js Route Handlers | Source-first `src/*.ts` exports | Next build with `transpilePackages` | Pending | Experimental app |
+| plain-backend | Plain Vercel function | Source-first `src/*.ts` exports | `includeFiles` ships workspace packages | Pending | Control app mirroring current `consent-instance` style |
+| next-backend | Next.js Route Handlers | Source-first `src/*.ts` exports | Next build with `transpilePackages` | Pending | Experimental app |
 
 ## Expected Outcome
 
